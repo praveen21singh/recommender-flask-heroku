@@ -1,12 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[15]:
 
 
 import pandas as pd
 import os
-from os  import getcwd
+from os import getcwd
 import pickle
 from flask import Flask, render_template, request
 
@@ -109,7 +106,7 @@ def predict():
     cust_name = str(request.args.get('name')).upper()
     if cust_name in cust_prod_ranking_model['reviews_username'].unique():
         output = recommend_prod_cust(cust_name)
-        return render_template('index.html', prediction_text='Churn Output {}'.format(output))
+        return render_template('index.html', prediction_text='Recommended Output {}'.format(output))
     else:
         return render_template('index.html')
 
