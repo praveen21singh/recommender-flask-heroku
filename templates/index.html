@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="container">
+  <h2 style="font-weight: bold; color:blue">Welcome to Product Recommendation System</h2>
+</div>
+
+<div class="container">
+  <div class="jumbotron">
+
+    <p style="font-weight: bold; color:black">Enter Customer Name</p>
+
+    <form action="{{url_for('predict')}}" method="post">
+      <input type="text" name="name" class="form-control">
+      <input type="submit" class="btn btn-info" value="LOGIN">
+    </form>
+
+    <br>
+
+{{ prediction_text }}
+  </div>
+</div>
+
+<div class="container">
+
+</div>
+
+
+{% endblock %}
